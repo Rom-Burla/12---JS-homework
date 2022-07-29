@@ -60,7 +60,6 @@ for (let i = 0; i < 4; i++) {
     });
   }
 }
-console.log(inputArr);
 elem.appendChild(myForm);
 myForm.method = "get";
 myForm.appendChild(countrySelect);
