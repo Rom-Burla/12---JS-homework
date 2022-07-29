@@ -13,6 +13,15 @@ h1{
 label{
     font-family: cursive;
 }
+label:first-of-type{
+    color: red;
+}
+label:nth-of-type(2){
+    color: green;
+}
+label:nth-of-type(3){
+    color: blue;
+}
 input{
     margin: 20px;
     border: 1.5px solid blue;
