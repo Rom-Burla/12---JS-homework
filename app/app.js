@@ -38,8 +38,8 @@ for (let i = 0; i < 3; i++) {
     }
   });
   inputArr[i].addEventListener("change", () => {
-    if (inputArr[i].value > 256 || inputArr[i].value <= 0) {
-      alert("Not an RGB value, Please try a number from 0-256");
+    if (inputArr[i].value >= 256 || inputArr[i].value <= 0) {
+      alert("Not an RGB value, Please try a number from 0-255");
       inputArr[i].value = "";
     }
   });
