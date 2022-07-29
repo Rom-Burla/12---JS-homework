@@ -1,3 +1,5 @@
+"use strict";
+
 let elem = document.querySelector("#root");
 let myForm = document.createElement("form");
 let myBtn = document.createElement("button");

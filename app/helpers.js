@@ -1,3 +1,5 @@
+"use strict";
+
 import { inputArr, colorValue } from "./app.js";
 
 const RGBA = () => {
