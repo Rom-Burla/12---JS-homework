@@ -220,6 +220,7 @@ const countries = [
   "United Arab Emirates",
   "United Kingdom",
   "Uruguay",
+  "USA",
   "Uzbekistan",
   "Venezuela",
   "Vietnam",

@@ -56,7 +56,7 @@ import { changeColor, RGB, countries } from "./helpers.js";
 for (let i = 0; i < countries.length; i++) {
   countrySelect.innerHTML += `<option Value ${countries[i].toLowerCase}>${countries[i]}</option>`;
 }
-myTitle.innerHTML += `<span></span>`;
+myTitle.innerHTML += `<span>Israel</span>`;
 let country = document.querySelector("span");
 myBtn.addEventListener("click", RGB);
 myBtn.addEventListener("click", () => {
