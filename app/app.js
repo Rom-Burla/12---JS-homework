@@ -5,7 +5,7 @@ let myTitle = document.querySelector("h1");
 let countrySelect = document.createElement("select");
 myBtn.type = "button";
 let inputArr = [];
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 4; i++) {
   let myLabel = document.createElement("label");
   let myInput = document.createElement("input");
 
@@ -14,6 +14,7 @@ for (let i = 0; i < 3; i++) {
   myInput.type = "number";
   myInput.placeholder = "Give value to ";
   myInput.classList = "my-input ";
+  myInput.autocomplete = "off";
   if (i === 0) {
     myLabel.textContent = "R";
     myLabel.setAttribute("for", "r");
@@ -24,11 +25,16 @@ for (let i = 0; i < 3; i++) {
     myLabel.setAttribute("for", "g");
     myInput.id = "g";
     myInput.placeholder += "Green";
-  } else {
+  } else if (i === 2) {
     myLabel.textContent = "B";
     myLabel.setAttribute("for", "b");
     myInput.id = "b";
     myInput.placeholder += "Blue";
+  } else {
+    myLabel.textContent = "A";
+    myLabel.setAttribute("for", "a");
+    myInput.id = "a";
+    myInput.placeholder += "Opacity";
   }
   inputArr.push(myInput);
   inputArr[i].addEventListener("keydown" && "keyup", () => {
@@ -38,12 +44,23 @@ for (let i = 0; i < 3; i++) {
     }
   });
   inputArr[i].addEventListener("change", () => {
-    if (inputArr[i].value >= 256 || inputArr[i].value <= 0) {
+    if (inputArr[i].value >= 256 || inputArr[i].value < 0) {
       alert("Not an RGB value, Please try a number from 0-255");
       inputArr[i].value = "";
     }
   });
+  if (i === 3) {
+    inputArr[i].addEventListener("change", () => {
+      if (inputArr[i].value > 1 || inputArr[i].value < 0) {
+        alert(
+          "Not an opacity value, Please try a number with decimals from 0-1"
+        );
+        inputArr[i].value = "";
+      }
+    });
+  }
 }
+console.log(inputArr);
 elem.appendChild(myForm);
 myForm.method = "get";
 myForm.appendChild(countrySelect);
@@ -52,13 +69,13 @@ myBtn.textContent = "click me";
 export { inputArr };
 export let colorValue = document.createElement("div");
 elem.appendChild(colorValue);
-import { changeColor, RGB, countries } from "./helpers.js";
+import { changeColor, RGBA, countries } from "./helpers.js";
 for (let i = 0; i < countries.length; i++) {
   countrySelect.innerHTML += `<option Value ${countries[i].toLowerCase}>${countries[i]}</option>`;
 }
 myTitle.innerHTML += `<span>Israel</span>`;
 let country = document.querySelector("span");
-myBtn.addEventListener("click", RGB);
+myBtn.addEventListener("click", RGBA);
 myBtn.addEventListener("click", () => {
   myTitle.style.backgroundColor = changeColor();
   myTitle.style.color = changeColor();

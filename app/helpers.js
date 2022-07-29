@@ -1,17 +1,18 @@
 import { inputArr, colorValue } from "./app.js";
 
-const RGB = () => {
-  let rgb = {
+const RGBA = () => {
+  let rgba = {
     Red: inputArr[0].value,
     Green: inputArr[1].value,
     Blue: inputArr[2].value,
+    Alpha: inputArr[3].value,
   };
 
-  colorValue.style.backgroundColor = `rgb(${rgb.Red}, ${rgb.Green}, ${rgb.Blue})`;
+  colorValue.style.backgroundColor = `rgba(${rgba.Red}, ${rgba.Green}, ${rgba.Blue}, ${rgba.Alpha})`;
   colorValue.style.color = changeColor();
   colorValue.style.fontFamily = "cursive";
   colorValue.style.fontSize = "22px";
-  colorValue.innerHTML = `<p>Red = ${rgb.Red} Green = ${rgb.Green} Blue = ${rgb.Blue}</p>`;
+  colorValue.innerHTML = `<p>Red = ${rgba.Red} Green = ${rgba.Green} Blue = ${rgba.Blue} Opacity = ${rgba.Alpha}</p>`;
 };
 const changeColor = () => {
   let r = Math.floor(Math.random() * 256);
@@ -230,4 +231,4 @@ const countries = [
   "Zimbabwe",
 ];
 
-export { RGB, changeColor, countries };
+export { RGBA, changeColor, countries };
